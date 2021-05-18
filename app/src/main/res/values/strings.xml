@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FabflixMobile</string>
+    <string name="search">Search</string>
+    <string name="enter_title">Enter Title</string>
+    <color name="red">#CC0000</color>
+</resources>

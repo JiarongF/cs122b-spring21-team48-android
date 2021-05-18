@@ -79,8 +79,8 @@ public class Login extends AppCompatActivity {
                                     startActivity(mainPage);
                                 } else {
                                     // message.setText(jsonObj.getString("message"));
-                                    //message.setText(login_message);
-                                    message.setText("Invalid username or password");
+                                    message.setText(login_message);
+                                    // message.setText("Invalid username or password");
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -91,8 +91,7 @@ public class Login extends AppCompatActivity {
             public void onErrorResponse(VolleyError volleyError) {
                 message.setText((CharSequence) volleyError);
             }
-        }){
-
+        }) {
             @Override
             protected Map<String, String> getParams() {
                 // POST request form data

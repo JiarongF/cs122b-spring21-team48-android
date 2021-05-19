@@ -51,11 +51,11 @@ public class Movie {
 
     public String toString() {
 
-        return "Id:" + getId() + ";" +
-                "Title:" + getTitle() + ";" +
-                "Year:" + getYear() + ";" +
-                "Director:" + getDirector() + ";" +
-                "Genres:" + getGenres()+ ";" +
+        return "Id:" + getId() + ";&" +
+                "Title:" + getTitle() + ";&" +
+                "Year:" + getYear() + ";&" +
+                "Director:" + getDirector() + ";&" +
+                "Genres:" + getGenres()+ ";&" +
                 "Stars:"+ getStars() + "\n";
     }
 

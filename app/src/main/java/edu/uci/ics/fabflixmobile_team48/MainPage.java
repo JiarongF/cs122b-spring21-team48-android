@@ -68,7 +68,7 @@ public class MainPage extends AppCompatActivity {
                         try {
                             JSONArray jsonarry = new JSONArray(response);
                             String searchResult = "";
-                            for(int i = 0; i < Math.min(jsonarry.length(),20);i++){
+                            for(int i = 0; i < jsonarry.length();i++){
                                JSONObject jsobj = jsonarry.getJSONObject(i);
                                String id = jsobj.getString("movie_id");
                                String title = jsobj.getString("movie_title");

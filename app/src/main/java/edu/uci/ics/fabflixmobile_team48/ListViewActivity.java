@@ -19,8 +19,9 @@ public class ListViewActivity extends Activity {
         final ArrayList<Movie> movies = new ArrayList<>();
         String[] searchedMovies = message.split("\n");
         for (int i = 0; i < searchedMovies.length; i++) {
-            String[] movieInfo = searchedMovies[i].split(";");
+            String[] movieInfo = searchedMovies[i].split(";&");
             movies.add(new Movie(movieInfo[0], movieInfo[1], movieInfo[2], movieInfo[3], movieInfo[4], movieInfo[5]));
+            System.out.println(movies.get(i).toString());
         }
 
         MovieList adapter = new MovieList(movies, this);

@@ -1,19 +1,63 @@
 package edu.uci.ics.fabflixmobile_team48;
 
+import java.util.ArrayList;
+
 public class Movie {
-    private final String name;
-    private final short year;
+        private final String id;
 
-    public Movie(String name, short year) {
-        this.name = name;
-        this.year = year;
+        private final String title;
+
+        private final String year;
+
+        private final String director;
+
+        private final String genres;
+
+        private final String stars;
+
+        public Movie(String id, String title, String year, String director, String genres, String stars) {
+            this.id = id;
+            this.title = title;
+            this.year = year;
+            this.director = director;
+            this.genres = genres;
+            this.stars = stars;
+
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public String getYear() {
+            return year;
+        }
+
+        public String getDirector() {
+            return director;
+        }
+
+        public String getGenres() {
+            return genres;
+        }
+
+        public String getStars() {
+            return stars;
+        }
+
+    public String toString() {
+
+        return "Id:" + getId() + ";" +
+                "Title:" + getTitle() + ";" +
+                "Year:" + getYear() + ";" +
+                "Director:" + getDirector() + ";" +
+                "Genres:" + getGenres()+ ";" +
+                "Stars:"+ getStars() + "\n";
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public short getYear() {
-        return year;
-    }
 }

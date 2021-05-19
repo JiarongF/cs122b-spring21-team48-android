@@ -65,34 +65,33 @@ public class Login extends AppCompatActivity {
                 baseURL + "/api/login",
                 new Response.Listener<String>() {
                     @Override
-                        public void onResponse (String response){
+                    public void onResponse (String response){
                         //message.setText(response);
-                            try {
-                                JSONObject jsonObj = new JSONObject(response);
-                                String status = jsonObj.getString("status");
-                                System.out.println("Status is " + status);
-                                String login_message = jsonObj.getString("message");
-                                if (status.equals("success")) {
-                                    // initialize the activity(page)/destination
-                                    Intent mainPage = new Intent(Login.this, MainPage.class);
-                                    // activate the list page.
-                                    startActivity(mainPage);
-                                } else {
-                                    // message.setText(jsonObj.getString("message"));
-                                    //message.setText(login_message);
-                                    message.setText("Invalid username or password");
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                        try {
+                            JSONObject jsonObj = new JSONObject(response);
+                            String status = jsonObj.getString("status");
+                            System.out.println("Status is " + status);
+                            String login_message = jsonObj.getString("message");
+                            if (status.equals("success")) {
+                                // initialize the activity(page)/destination
+                                Intent mainPage = new Intent(Login.this, MainPage.class);
+                                // activate the list page.
+                                startActivity(mainPage);
+                            } else {
+                                // message.setText(jsonObj.getString("message"));
+                                message.setText(login_message);
+                                // message.setText("Invalid username or password");
                             }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 message.setText((CharSequence) volleyError);
             }
-        }){
-
+        }) {
             @Override
             protected Map<String, String> getParams() {
                 // POST request form data

@@ -42,7 +42,7 @@ public class MovieList extends ArrayAdapter<Movie> {
         titleView.setText(movie.getTitle());
         // need to cast the year to a string to set the label
         subtitleView.setText(movie.getYear() + "");
-        
+
         return view;
     }
 }

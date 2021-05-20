@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -94,7 +95,7 @@ public class MainPage extends AppCompatActivity {
             public void onErrorResponse(VolleyError volleyError) {
                 message.setText((CharSequence) volleyError);
             }
-        }) /**{
+        }); /**{
             @Override
             protected Map<String, String> getParams() {
                 // POST request form data
@@ -104,7 +105,8 @@ public class MainPage extends AppCompatActivity {
                 return params;
             }
         }*/;
-
+        // maximum retry policy is when request takes 50 seconds
+        searchRequest.setRetryPolicy(new DefaultRetryPolicy( 50000, 5, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         // important: queue.add is where the login request is actually sent
         queue.add(searchRequest);
 

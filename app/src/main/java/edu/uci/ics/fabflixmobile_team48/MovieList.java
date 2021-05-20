@@ -23,10 +23,10 @@ public class MovieList extends ArrayAdapter<Movie> {
       In Android, localhost is the address of the device or the emulator.
       To connect to your machine, you need to use the below IP address
      */
-    private final String host = "10.0.2.2";
-    private final String port = "8443";
-    private final String domain = "cs122b-spring21-team-48-war";
-    private final String baseURL = "https://" + host + ":" + port + "/" + domain;
+//    private final String host = "10.0.2.2";
+//    private final String port = "8443";
+//    private final String domain = "cs122b-spring21-team-48-war";
+//    private final String baseURL = "https://" + host + ":" + port + "/" + domain;
 
     @NonNull
     @Override

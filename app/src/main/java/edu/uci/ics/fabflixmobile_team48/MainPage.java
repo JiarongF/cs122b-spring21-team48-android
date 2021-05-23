@@ -37,7 +37,7 @@ public class MainPage extends AppCompatActivity {
      */
     private final String host = "10.0.2.2";
     private final String port = "8443";
-    private final String domain = "cs122b-spring21-team-48-war";
+    private final String domain = "cs122b-spring21-team-48";
     private final String baseURL = "https://" + host + ":" + port + "/" + domain;
 
 

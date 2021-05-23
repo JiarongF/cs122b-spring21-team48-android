@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class ListViewActivity extends Activity {
     public static final String EXTRA_MESSAGE = "edu.uci.ics.fabflixmobile_team48.MESSAGE";
-    private final String host = "10.0.2.2";
+    private final String host = "3.138.107.189";
     private final String port = "8443";
     private final String domain = "cs122b-spring21-team-48";
     private final String baseURL = "https://" + host + ":" + port + "/" + domain;

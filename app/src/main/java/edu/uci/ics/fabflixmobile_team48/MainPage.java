@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -35,7 +38,7 @@ public class MainPage extends AppCompatActivity {
       In Android, localhost is the address of the device or the emulator.
       To connect to your machine, you need to use the below IP address
      */
-    private final String host = "10.0.2.2";
+    private final String host = "3.138.107.189";
     private final String port = "8443";
     private final String domain = "cs122b-spring21-team-48";
     private final String baseURL = "https://" + host + ":" + port + "/" + domain;
@@ -52,6 +55,16 @@ public class MainPage extends AppCompatActivity {
 
         //assign a listener to call a function to handle the user request when clicking a button
         searchButton.setOnClickListener(view -> search());
+        title.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    searchButton.performClick();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     public void search() {
